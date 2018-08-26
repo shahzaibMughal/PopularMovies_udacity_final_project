@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#37474F</color>
+    <color name="colorPrimaryDark">#263238</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="subHeadingTextColor">#99ff4081</color>
+    <color name="single_item_movie_info_container_background">#a8000000</color>
+    <color name="default_image_background_color">#aaa</color>
+</resources>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/movie_list_single_item_height"
+    android:layout_margin="@dimen/movies_list_single_item_margin">
+
+    <ImageView
+        android:id="@+id/movie_poster_IV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY" />
+
+    <LinearLayout
+        android:id="@+id/movie_info_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/single_item_movie_info_container_background"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/movie_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/default_content_margin"
+            android:layout_marginStart="@dimen/default_content_margin"
+            android:layout_marginTop="@dimen/default_content_margin"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/movies_list_single_item_movie_title_size"
+            tools:text="Suicide Squad" />
+
+        <TextView
+            android:id="@+id/movie_rating_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_content_margin"
+            android:layout_marginEnd="@dimen/default_content_margin"
+            android:layout_marginStart="@dimen/default_content_margin"
+            android:alpha=".7"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/movies_list_single_item_movie_rating_size"
+            tools:text="7.5/10" />
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

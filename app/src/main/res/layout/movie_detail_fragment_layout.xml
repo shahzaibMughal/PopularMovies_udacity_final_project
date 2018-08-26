@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/movie_detail_collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="256dp"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleTextAppearance="@android:color/transparent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <FrameLayout
+                android:id="@+id/movie_trailer_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_collapseMode="parallax">
+
+
+                <ImageView
+                    android:id="@+id/movie_trailer_thumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_play" />
+
+
+            </FrameLayout>
+
+
+            <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/transparent"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:layout="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_content_margin"
+                android:padding="@dimen/default_content_margin">
+
+
+                <ImageView
+                    android:id="@+id/movie_poster_IV"
+                    android:layout_width="@dimen/movie_detail_poster_width"
+                    android:layout_height="@dimen/movie_detail_poster_height"
+                    android:scaleType="fitXY"
+                    android:src="@color/default_image_background_color"
+                    layout:layout_constraintStart_toStartOf="parent"
+                    layout:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/movie_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="@dimen/default_content_margin"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="@dimen/default_content_margin"
+                    android:maxEms="6"
+                    android:text="Guardian of the Galaxy"
+                    android:textSize="@dimen/movie_detail_text_size"
+                    layout:layout_constraintBottom_toTopOf="@+id/movie_category"
+                    layout:layout_constraintStart_toEndOf="@+id/movie_poster_IV"
+                    layout:layout_constraintTop_toTopOf="@+id/movie_poster_IV" />
+
+                <TextView
+                    android:id="@+id/movie_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxEms="6"
+                    android:text="action, comedy"
+                    android:textSize="@dimen/movie_detail_normal_text_size"
+                    layout:layout_constraintStart_toStartOf="@+id/movie_title"
+                    layout:layout_constraintTop_toBottomOf="@+id/movie_title" />
+
+                <ImageView
+                    android:id="@+id/releaseStatusIV"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/ic_checked_circle"
+                    layout:layout_constraintBottom_toTopOf="@+id/movieRatingBar"
+                    layout:layout_constraintStart_toStartOf="@+id/movie_category" />
+
+                <TextView
+                    android:id="@+id/releaseStatusTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_content_margin"
+                    android:layout_marginStart="@dimen/default_content_margin"
+                    android:text="Released"
+                    layout:layout_constraintBottom_toBottomOf="@+id/releaseStatusIV"
+                    layout:layout_constraintStart_toEndOf="@+id/releaseStatusIV"
+                    layout:layout_constraintTop_toTopOf="@+id/releaseStatusIV" />
+
+                <RatingBar
+                    android:id="@+id/movieRatingBar"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    layout:layout_constraintBottom_toBottomOf="@+id/movie_poster_IV"
+                    layout:layout_constraintStart_toStartOf="@+id/releaseStatusIV" />
+
+
+                <LinearLayout
+                    android:id="@+id/ratingDetailCircle"
+                    android:layout_width="@dimen/movie_detail_circle_width_height"
+                    android:layout_height="@dimen/movie_detail_circle_width_height"
+                    android:layout_marginEnd="@dimen/default_content_margin"
+                    android:layout_marginRight="@dimen/default_content_margin"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/circle"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    layout:layout_constraintEnd_toStartOf="@+id/languageDetailCircle"
+                    layout:layout_constraintStart_toStartOf="@+id/movie_poster_IV"
+                    layout:layout_constraintTop_toBottomOf="@+id/movie_poster_IV">
+
+                    <TextView
+                        android:id="@+id/ratingDetailTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4.3"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <RatingBar
+                        android:id="@+id/movie_rating_bar_in_circle"
+                        style="@style/Widget.AppCompat.RatingBar.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        layout:layout_constraintBottom_toBottomOf="@+id/movie_poster_IV"
+                        layout:layout_constraintStart_toStartOf="@+id/releaseStatusIV" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/ratingTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Rating"
+                    android:textSize="18sp"
+                    layout:layout_constraintEnd_toEndOf="@+id/ratingDetailCircle"
+                    layout:layout_constraintStart_toStartOf="@+id/ratingDetailCircle"
+                    layout:layout_constraintTop_toBottomOf="@+id/ratingDetailCircle" />
+
+
+                <LinearLayout
+                    android:id="@+id/languageDetailCircle"
+                    android:layout_width="@dimen/movie_detail_circle_width_height"
+                    android:layout_height="@dimen/movie_detail_circle_width_height"
+                    android:layout_marginEnd="@dimen/default_content_margin"
+                    android:layout_marginRight="@dimen/default_content_margin"
+                    android:background="@drawable/circle"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    layout:layout_constraintBottom_toBottomOf="@+id/ratingDetailCircle"
+                    layout:layout_constraintEnd_toStartOf="@+id/releasedDetailCircle"
+                    layout:layout_constraintStart_toEndOf="@+id/ratingDetailCircle"
+                    layout:layout_constraintTop_toTopOf="@+id/ratingDetailCircle">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_language" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/languageTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="en"
+                    android:textSize="18sp"
+                    layout:layout_constraintEnd_toEndOf="@+id/languageDetailCircle"
+                    layout:layout_constraintStart_toStartOf="@+id/languageDetailCircle"
+                    layout:layout_constraintTop_toBottomOf="@+id/languageDetailCircle" />
+
+
+                <LinearLayout
+                    android:id="@+id/releasedDetailCircle"
+                    android:layout_width="@dimen/movie_detail_circle_width_height"
+                    android:layout_height="@dimen/movie_detail_circle_width_height"
+                    android:layout_marginLeft="@dimen/default_content_margin"
+                    android:layout_marginStart="@dimen/default_content_margin"
+                    android:background="@drawable/circle"
+                    layout:layout_constraintBottom_toBottomOf="@+id/languageDetailCircle"
+                    layout:layout_constraintEnd_toEndOf="@+id/movie_title"
+                    layout:layout_constraintStart_toEndOf="@+id/languageDetailCircle"
+                    layout:layout_constraintTop_toTopOf="@+id/languageDetailCircle"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="20dp"
+                        android:src="@drawable/ic_check" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/releaseStatusTV2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Released"
+                    android:textSize="18sp"
+                    layout:layout_constraintEnd_toEndOf="@+id/releasedDetailCircle"
+                    layout:layout_constraintStart_toStartOf="@+id/releasedDetailCircle"
+                    layout:layout_constraintTop_toBottomOf="@+id/releasedDetailCircle" />
+
+
+
+                <TextView
+                    android:id="@+id/textView6"
+                    style="@style/headingTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="Overview"
+                    layout:layout_constraintStart_toStartOf="@+id/movie_poster_IV"
+                    layout:layout_constraintTop_toBottomOf="@+id/ratingTV" />
+
+                <TextView
+                    android:id="@+id/movie_overview_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="@dimen/default_content_margin"
+                    android:maxEms="20"
+                    android:text="@string/lorem_ipsum"
+                    layout:layout_constraintStart_toStartOf="@+id/textView6"
+                    layout:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/movie_review_container"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_margin="@dimen/default_content_margin"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="start"
+                android:orientation="vertical"
+                android:padding="@dimen/default_content_margin">
+
+
+                <TextView
+                    style="@style/headingTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/default_content_margin"
+                    android:paddingBottom="@dimen/default_content_margin"
+                    android:text="Reviews" />
+
+
+                <TextView
+                    android:id="@+id/reviewAuthor1"
+                    style="@style/subheadingTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="chadrico" />
+
+                <TextView
+
+                    android:id="@+id/reviewContent1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/default_content_margin"
+                    android:text="One of my all time favourite sci fi movies. Set the bench mark for modern sci fi, should be considered a great like Blade Runner.\r\nGreat acting, story, soundtrack! 5/5" />
+
+                <TextView
+
+                    android:id="@+id/reviewAuthor2"
+
+                    style="@style/subheadingTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="chadrico" />
+
+                <TextView
+                    android:id="@+id/reviewContent2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/default_content_margin"
+                    android:text="One of my all time favourite sci fi movies. Set the bench mark for modern sci fi, should be considered a great like Blade Runner.\r\nGreat acting, story, soundtrack! 5/5" />
+
+
+                <TextView
+                    android:id="@+id/reviewAuthor3"
+
+                    style="@style/subheadingTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="chadrico" />
+
+                <TextView
+                    android:id="@+id/reviewContent3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/default_content_margin"
+                    android:text="One of my all time favourite sci fi movies. Set the bench mark for modern sci fi, should be considered a great like Blade Runner.\r\nGreat acting, story, soundtrack! 5/5" />
+
+                <TextView
+                    style="@style/headingTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Read More" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

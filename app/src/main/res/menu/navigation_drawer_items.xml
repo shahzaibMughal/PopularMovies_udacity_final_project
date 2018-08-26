@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/moviesGroup"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nowPlayingMovies"
+            android:checkable="true"
+            android:icon="@drawable/ic_now_playing_movies"
+            android:title="Now Playing Movies" />
+
+
+        <item
+            android:id="@+id/popularMovies"
+            android:checkable="true"
+            android:icon="@drawable/ic_popular_movies"
+            android:title="Popular Movies" />
+
+        <item
+            android:id="@+id/upcomingMovies"
+            android:checkable="true"
+            android:icon="@drawable/ic_upcoming_movies"
+            android:title="Upcoming Movies" />
+
+
+    </group>
+
+
+        <group
+            android:id="@+id/otherItemsGroup"
+            android:checkableBehavior="single">
+            <item
+                android:id="@+id/about"
+                android:checkable="true"
+                android:icon="@drawable/ic_about"
+                android:title="About" />
+            <item
+                android:id="@+id/settings"
+                android:checkable="true"
+                android:icon="@drawable/ic_settings"
+                android:title="Settings" />
+        </group>
+
+</menu>

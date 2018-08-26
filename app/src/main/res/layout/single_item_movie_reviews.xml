@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/default_content_margin"
+    android:layout_margin="@dimen/default_content_margin">
+
+
+    <TextView
+        android:id="@+id/reviewAuthor1"
+        style="@style/subheadingTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="chadrico" />
+
+    <TextView
+
+        android:id="@+id/reviewContent1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_content_margin"
+        tools:text="One of my all time favourite sci fi movies. Set the bench mark for modern sci fi, should be considered a great like Blade Runner.\r\nGreat acting, story, soundtrack! 5/5" />
+
+
+</LinearLayout>

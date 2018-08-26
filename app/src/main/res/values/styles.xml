@@ -1,0 +1,26 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+    </style>
+
+
+    <style name="headingTextStyle">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/movie_detail_heading_text_size</item>
+
+    </style>
+
+
+    <style name="subheadingTextStyle">
+        <item name="android:textSize">@dimen/movie_detail_subHeading_text_size</item>
+        <item name="android:textStyle">bold</item>
+
+    </style>
+
+</resources>

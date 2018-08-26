@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Movies</string>
+    <string name="lorem_ipsum">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</string>
+    <string name="drawer_open">drawer_open</string>
+    <string name="drawer_close">drawer_close</string>
+
+
+    <!-- For preference Screen -->
+    <string name="label_now_playing_movies">Now Playing Movies</string>
+    <string name="label_popular_movies">Popular Movies</string>
+    <string name="label_upcoming_movies">Upcoming Movies</string>
+    <string name="label_favourite_movies">Favourite Movies</string>
+
+
+    <string name="value_now_playing_movies">now_playing_movies</string>
+    <string name="value_popular_movies">popular_movies</string>
+    <string name="value_upcoming_movies">upcoming_movies</string>
+    <string name="value_favourite_movies">favourite_movies</string>
+    <string name="show_movie_info">show_movie_info</string>
+    <string name="default_sort">default_sort</string>
+
+
+
+
+
+    <string name="toolbar_title_now_playing_movies">Now Playing Movies</string>
+    <string name="toolbar_title_upcoming_movies">Upcoming Movies</string>
+    <string name="toolbar_title_popular_movies">Popular Movies</string>
+
+
+
+
+
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <array name="default_sort_order_options_labels">
+        <item>@string/label_upcoming_movies</item>
+        <item>@string/label_popular_movies</item>
+        <item>@string/label_now_playing_movies</item>
+    </array>
+
+
+    <array name="default_sort_order_options_values">
+        <item>@string/value_upcoming_movies</item>
+        <item>@string/value_popular_movies</item>
+        <item>@string/value_now_playing_movies</item>
+    </array>
+
+
+</resources>
